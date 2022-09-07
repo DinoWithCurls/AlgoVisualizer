@@ -2,7 +2,7 @@ import unittest
 
 #import mergeSort
 from bubbleSort import bubbleSort
-#import insertionSort
+from insertionSort import insertionSort
 #import quickSort
 #import countSort
 #import radixSort
@@ -36,6 +36,19 @@ class UnitTest(unittest.TestCase):
         self._test_sort(bubbleSort, duplicate_number_array)
         print("For empty array")
         self._test_sort(bubbleSort, unsorted_positive_array)
+        
+    def test_insertion_sort(self):
+        print("\nTesting Insertion Sort")
+        print("For positive numbers")
+        self._test_sort(insertionSort, unsorted_positive_array)
+        print("For negative numbers")
+        self._test_sort(insertionSort, unsorted_negative_array)
+        print("For both positive and negative numvers")
+        self._test_sort(insertionSort, unsorted_integer_array)
+        print("For array with same numbers")
+        self._test_sort(insertionSort, duplicate_number_array)
+        print("For empty array")
+        self._test_sort(insertionSort, unsorted_positive_array)
 
 if __name__ == '__main__':
     unittest.main()
