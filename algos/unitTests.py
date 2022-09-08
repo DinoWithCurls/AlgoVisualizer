@@ -1,6 +1,6 @@
 import unittest
 
-#import mergeSort
+from mergeSort import mergeSort
 from bubbleSort import bubbleSort
 from insertionSort import insertionSort
 #import quickSort
@@ -49,7 +49,19 @@ class UnitTest(unittest.TestCase):
         self._test_sort(insertionSort, duplicate_number_array)
         print("For empty array")
         self._test_sort(insertionSort, unsorted_positive_array)
-
+    
+    def test_merge_sort(self):
+        print("\nTesting Merge Sort")
+        print("For positive numbers")
+        self._test_sort(mergeSort, unsorted_positive_array)
+        print("For negative numbers")
+        self._test_sort(mergeSort, unsorted_negative_array)
+        print("For both positive and negative numvers")
+        self._test_sort(mergeSort, unsorted_integer_array)
+        print("For array with same numbers")
+        self._test_sort(mergeSort, duplicate_number_array)
+        print("For empty array")
+        self._test_sort(mergeSort, unsorted_positive_array)
 if __name__ == '__main__':
     unittest.main()
     
