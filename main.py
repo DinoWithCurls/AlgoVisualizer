@@ -3,32 +3,32 @@ import random
 import math
 import constants
 from View import View
-from Visualiser import *
+from visualiser import *
 pygame.init()
 
 
 # For generating a random array.
 def generate_array(n, min_item, max_item):
-	lst = []
+	array = []
 	for _ in range(n):
 		val = random.randint(min_item, max_item)
-		lst.append(val)
-	return lst
+		array.append(val)
+	return array
 
 #This is temporary, just for testing the visualiser. Will be removed when other algorithms are added.
 def bubble_sort(view, ascending=True):
-	lst = view.lst
-	for i in range(len(lst) - 1):
-		for j in range(len(lst) - 1 - i):
-			num1 = lst[j]
-			num2 = lst[j + 1]
+	array = view.array
+	for i in range(len(array) - 1):
+		for j in range(len(array) - 1 - i):
+			num1 = array[j]
+			num2 = array[j + 1]
 
 			if (num1 > num2 and ascending) or (num1 < num2 and not ascending):
-				lst[j], lst[j + 1] = lst[j + 1], lst[j]
+				array[j], array[j + 1] = array[j + 1], array[j]
 				draw_list(view, {j: constants.GREEN, j + 1: constants.BLUE}, True)
 				yield True
 
-	return lst
+	return array
 
 
 def main():
@@ -38,11 +38,11 @@ def main():
 	n = 50
 	min_item = 0
 	max_item = 200
-	lst = generate_array(n, min_item, max_item)
-	view = View(1000, 800, lst)
+	array = generate_array(n, min_item, max_item)
+	view = View(1000, 800, array)
 	sorting = False
 	ascending = True
-
+	# the algorithm to be shown and run as default
 	sorting_algorithm = bubble_sort
 	sorting_algo_name = "Bubble Sort"
 	sorting_algorithm_generator = None
@@ -65,8 +65,8 @@ def main():
 				continue
 
 			if event.key == pygame.K_r:
-				lst = generate_array(n, min_item, max_item)			#The array to be sorted is generated
-				view.set_list(lst)
+				new_array = generate_array(n, min_item, max_item)			#The array to be sorted is generated
+				view.set_list(new_array)
 				sorting = False
 			elif event.key == pygame.K_SPACE and sorting == False:	#When the spacebar is pressed on the keyboard, the array is sorted and this is visualised on the screen
 				sorting = True

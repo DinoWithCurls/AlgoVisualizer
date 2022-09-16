@@ -19,14 +19,14 @@ def draw(view, algo, ascending):
 
 #This function is for the sorting visualisation
 def draw_list(view, color_positions={}, clear_bg=False):
-	lst = view.lst
+	array = view.array
 
 	if clear_bg:
 		clear_rect = (constants.HORIZONTAL_PADDING//2, constants.TOP_PADDING,
 						view.width - constants.HORIZONTAL_PADDING, view.height - constants.TOP_PADDING)
 		pygame.draw.rect(view.window, view.bg_color, clear_rect)
 
-	for i, val in enumerate(lst):
+	for i, val in enumerate(array):
 		x = view.start_x + i * view.block_width
 		y = view.height - (val - view.min_item) * view.block_height
 
