@@ -4,8 +4,11 @@ import math
 import constants
 from View import View
 from visualiser import *
-pygame.init()
+from algos.insertionSort import insertion_sort
+from algos.bubbleSort import bubble_sort
+from algos.heapSort import heap_sort
 
+pygame.init()
 
 # For generating a random array.
 def generate_array(n, min_item, max_item):
@@ -14,22 +17,6 @@ def generate_array(n, min_item, max_item):
 		val = random.randint(min_item, max_item)
 		array.append(val)
 	return array
-
-#This is temporary, just for testing the visualiser. Will be removed when other algorithms are added.
-def bubble_sort(view, ascending=True):
-	array = view.array
-	for i in range(len(array) - 1):
-		for j in range(len(array) - 1 - i):
-			num1 = array[j]
-			num2 = array[j + 1]
-
-			if (num1 > num2 and ascending) or (num1 < num2 and not ascending):
-				array[j], array[j + 1] = array[j + 1], array[j]
-				draw_list(view, {j: constants.GREEN, j + 1: constants.BLUE}, True)
-				yield True
-
-	return array
-
 
 def main():
 	run = True
@@ -75,6 +62,12 @@ def main():
 				ascending = True
 			elif event.key == pygame.K_d and not sorting:			#When D is pressed on the keyboard
 				ascending = False
+			elif event.key == pygame.K_i and not sorting:
+				sorting_algorithm = insertion_sort
+				sorting_algo_name = "Insertion Sort"
+			elif event.key == pygame.K_h and not sorting:
+				sorting_algorithm = heap_sort
+				sorting_algo_name = "Heap Sort"
 			elif event.key == pygame.K_b and not sorting:			#When B is pressed on the keyboard
 				sorting_algorithm = bubble_sort
 				sorting_algo_name = "Bubble Sort"
