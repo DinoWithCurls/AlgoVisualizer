@@ -18,6 +18,7 @@ Presently, there are 7 sorting algorithms which will be visualised:
 2. Insertion Sort
 3. Merge Sort
 4. Heap Sort
-5. Quick Sort
-6. Counting Sort
-7. Radix Sort
+5. Selection Sort
+6. Quick Sort
+7. Counting Sort
+8. Radix Sort
