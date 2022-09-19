@@ -1,8 +1,9 @@
 import unittest
 
-from mergeSort import mergeSort
-from bubbleSort import bubbleSort
-from insertionSort import insertionSort
+from selectionSort import selection_sort
+#from mergeSort import mergeSort
+#from bubbleSort import bubbleSort
+#from insertionSort import insertionSort
 #import quickSort
 #import countSort
 #import radixSort
@@ -24,44 +25,18 @@ class UnitTest(unittest.TestCase):
     def _test_sort(self, sort_func, input_list):
         expected_list = sorted(input_list)
         self.assertEqual(sort_func(input_list), expected_list, error_message)
-    def test_bubble_sort(self):
-        print("Testing Bubble Sort")
+    def test_selection_sort(self):
+        print('\nTesting Selection Sort')
         print("For positive numbers")
-        self._test_sort(bubbleSort, unsorted_positive_array)
+        self._test_sort(selection_sort, unsorted_positive_array)
         print("For negative numbers")
-        self._test_sort(bubbleSort, unsorted_negative_array)
+        self._test_sort(selection_sort, unsorted_negative_array)
         print("For both positive and negative numvers")
-        self._test_sort(bubbleSort, unsorted_integer_array)
+        self._test_sort(selection_sort, unsorted_integer_array)
         print("For array with same numbers")
-        self._test_sort(bubbleSort, duplicate_number_array)
+        self._test_sort(selection_sort, duplicate_number_array)
         print("For empty array")
-        self._test_sort(bubbleSort, unsorted_positive_array)
-        
-    def test_insertion_sort(self):
-        print("\nTesting Insertion Sort")
-        print("For positive numbers")
-        self._test_sort(insertionSort, unsorted_positive_array)
-        print("For negative numbers")
-        self._test_sort(insertionSort, unsorted_negative_array)
-        print("For both positive and negative numvers")
-        self._test_sort(insertionSort, unsorted_integer_array)
-        print("For array with same numbers")
-        self._test_sort(insertionSort, duplicate_number_array)
-        print("For empty array")
-        self._test_sort(insertionSort, unsorted_positive_array)
-    
-    def test_merge_sort(self):
-        print("\nTesting Merge Sort")
-        print("For positive numbers")
-        self._test_sort(mergeSort, unsorted_positive_array)
-        print("For negative numbers")
-        self._test_sort(mergeSort, unsorted_negative_array)
-        print("For both positive and negative numvers")
-        self._test_sort(mergeSort, unsorted_integer_array)
-        print("For array with same numbers")
-        self._test_sort(mergeSort, duplicate_number_array)
-        print("For empty array")
-        self._test_sort(mergeSort, unsorted_positive_array)
+        self._test_sort(selection_sort, unsorted_positive_array)
 if __name__ == '__main__':
     unittest.main()
     
