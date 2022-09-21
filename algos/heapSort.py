@@ -7,6 +7,8 @@ from visualiser import draw_list
 
 def heap_sort(view, ascending=True):
     array = view.array
+    if (array == sorted(array)):
+        return array
     yield from heapify(view, array, len(array))
     end = len(array) - 1
     while end > 0:
