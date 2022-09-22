@@ -16,7 +16,7 @@ Presently, there are 6 sorting algorithms which will be visualised:
 
 1. Bubble Sort
 2. Insertion Sort
-3. Heap Sort
-4. Shell Sort
-5. Merge Sort
+3. Selction Sort
+4. Heap Sort
+5. Shell Sort
 6. Quick Sort
