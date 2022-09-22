@@ -18,4 +18,3 @@ Presently, there are 5 sorting algorithms which will be visualised:
 2. Insertion Sort
 3. Selection Sort
 4. Heap Sort
-5. Quick Sort
