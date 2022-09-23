@@ -1,11 +1,7 @@
 import unittest
 
 from selectionSort import selection_sort
-#from mergeSort import mergeSort
-#from bubbleSort import bubbleSort
 from insertionSort import insertionSort
-#import quickSort
-#import heapSort
 
 unsorted_positive_array = [5, 5, 7, 8, 2, 4, 1]
 

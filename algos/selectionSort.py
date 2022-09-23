@@ -3,7 +3,7 @@ sys.path.append("..")
 import constants
 from visualiser import draw_list
 
-def selection_sort(view, ascending= True):
+def selection_sort(view, ascending=True):
     array = view.array
     size = len(array)
     for step in range(size):
