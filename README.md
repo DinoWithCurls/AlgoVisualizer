@@ -12,10 +12,10 @@ On running this project, the user may be able to see a randomly-generated array 
 
 ![188272091-9da7301e-35d0-4c98-8b02-c37d454d39c7](https://user-images.githubusercontent.com/42311383/190920801-b20f9390-7a86-4d42-95fd-915dd565cd27.jpg)
 
-Presently, there are 5 sorting algorithms which will be visualised:
+Presently, there are 6 sorting algorithms which will be visualised:
 
 1. Bubble Sort
 2. Insertion Sort
 3. Selection Sort
 4. Heap Sort
-5. Quick Sort
+5. Shell Sort
