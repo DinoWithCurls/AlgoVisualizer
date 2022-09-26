@@ -9,7 +9,8 @@ def draw(view, algo, ascending):
 	title = view.title_font.render(
 	    f"{algo} - {'Ascending' if ascending else 'Descending'}", 1, constants.BLACK)
 	view.window.blit(title, (view.width/2 - title.get_width()/2, 5))
-
+	sorting = view.normal_font.render("I - Insertion Sort | B - Bubble Sort | H - Heap Sort | S - Selection Sort | Z - Shell Sort", 1, constants.BLACK)
+	view.window.blit(sorting, (view.width/2 - sorting.get_width()/2 , 75))
 	controls = view.normal_font.render(
 	    "R - Reset | SPACE - Start Sorting | A - Ascending | D - Descending", 1, constants.BLACK)
 	view.window.blit(controls, (view.width/2 - controls.get_width()/2, 45))

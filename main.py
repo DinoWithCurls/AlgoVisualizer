@@ -7,6 +7,8 @@ from visualiser import *
 from algos.insertionSort import insertion_sort
 from algos.bubbleSort import bubble_sort
 from algos.heapSort import heap_sort
+from algos.selectionSort import selection_sort
+from algos.shellSort import shell_sort
 
 pygame.init()
 
@@ -71,6 +73,12 @@ def main():
 			elif event.key == pygame.K_b and not sorting:			#When B is pressed on the keyboard
 				sorting_algorithm = bubble_sort
 				sorting_algo_name = "Bubble Sort"
+			elif event.key == pygame.K_s and not sorting:
+				sorting_algorithm = selection_sort
+				sorting_algo_name = "Selection Sort"
+			elif event.key == pygame.K_z and not sorting:
+				sorting_algorithm = shell_sort
+				sorting_algo_name = "Shell Sort"
 	pygame.quit()
 
 
