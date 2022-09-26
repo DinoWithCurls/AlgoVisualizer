@@ -3,6 +3,7 @@ import unittest
 from selectionSort import selection_sort
 from insertionSort import insertionSort
 
+
 unsorted_positive_array = [5, 5, 7, 8, 2, 4, 1]
 
 unsorted_negative_array = [-1, -3, -5, -7, -9, -5]
