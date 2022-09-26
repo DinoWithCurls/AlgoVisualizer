@@ -1,12 +1,11 @@
 import sys
+sys.path.append("..")                                                                           #This is done to access functions located outside the current directory.
+
 import constants
-
-sys.path.append("..")
-
 from visualiser import draw_list
 
 def heap_sort(view, ascending=True):
-    array = view.array
+    array = view.array                                                                          #Fetch the randomised array.
     if (array == sorted(array)):
         return array
     yield from heapify(view, array, len(array))
@@ -20,15 +19,15 @@ def heap_sort(view, ascending=True):
     return array
 
 
-def heapify(view, array, count):
+def heapify(view, array, count):                                                                #Converts the array into a heap.
     start = (count-1) // 2
     while start >= 0:
         yield from siftDown(view, array, start, count - 1)
         start -= 1
 
 
-def siftDown(view, array, start, end):
-    root = start
+def siftDown(view, array, start, end):                                                          #Moves the nodes down the heap, and places them in their correct positions.
+    root = start    
     while 2 * root + 1 <= end:
         child = 2 * root + 1
         swap = root

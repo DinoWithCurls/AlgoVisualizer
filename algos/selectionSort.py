@@ -1,10 +1,11 @@
 import sys
-sys.path.append("..")
+sys.path.append("..")                                                                                                           #This is done to access functions located outside the current directory.
+
 import constants
 from visualiser import draw_list
 
 def selection_sort(view, ascending=True):
-    array = view.array
+    array = view.array                                                                                                          #Fetch the randomised array.
     size = len(array)
     for step in range(size):
         min_idx = step
